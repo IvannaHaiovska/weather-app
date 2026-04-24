@@ -2,23 +2,22 @@ import React, {
     useState
 } from "react";
 
-export default function Search(props) {
-    const [city, setCity] = useState("");
+export default function Search({ setCity }) {
+  const [input, setInput] = useState("");
 
-    function handleSearch(event) {
-        event.preventDefault(); 
-        alert(`Searching weather for ${city}`);
-    }
+  function handleSearch(e) {
+    e.preventDefault();
+    setCity(input);
+  }
 
-    function updateCity(event) {
-        setCity(event.target.value);
-    }
-
-    return ( 
-        <form onSubmit = {handleSearch}>
-            <input type = "text" placeholder = "Enter city" value = {city}
-            onChange = {updateCity}/> 
-            <button type = "submit"> Search </button> 
-        </form>
-    );
+  return (
+    <form onSubmit={handleSearch}>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Enter city"
+      />
+      <button>Search</button>
+    </form>
+  );
 }
