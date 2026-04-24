@@ -7,9 +7,13 @@ export default function Search({ setCity }) {
 
   function handleSearch(e) {
     e.preventDefault();
-    setCity(input);
-  }
 
+    if (!input.trim()) return;
+
+    setCity(input);
+    setInput("");
+  }
+  
   return (
     <form onSubmit={handleSearch}>
       <input
