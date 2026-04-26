@@ -19,7 +19,7 @@ export default function Search({ setCity }) {
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter city"
+        placeholder = "Enter city (e.g. London)"
       />
       <button>Search</button>
     </form>

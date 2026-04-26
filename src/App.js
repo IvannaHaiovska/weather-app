@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Search from "./components/Search";
 import Weather from "./components/Weather";
 import "./styles/App.css";
